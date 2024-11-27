@@ -260,9 +260,6 @@ const databaseHandler = {
   set() {
     throw Error('You can\'t change the entity')
   },
-  has (target, prop) {
-    return availableKeys.includes(prop)
-  },
   deleteProperty (target, prop) {
     if (!this.has(target, prop)) throw Error('This entity does not exist')
     deleteAll(prop)
